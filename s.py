@@ -58,7 +58,7 @@ if len(sys.argv) == 2 and sys.argv[1] != "":
         result = subprocess.run(["ssh-copy-id", "-i", "~/.ssh/id_rsa.pub", server], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.returncode == 0:
             with open(log_file, "a") as f:
-                f.write(datetime.datetime.now().strftime("%Y-%m-%d % "%H:%M:%S") + " - Added SSH key to remote server\n")
+                 f.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " - Added SSH key to remote server\n")
 # SSH into server
 result = subprocess.run(["ssh", "-q", server], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 if result.returncode == 0:
